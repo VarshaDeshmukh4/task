@@ -1,0 +1,24 @@
+<br> <br>
+<table id="users">
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>City</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Postal Code</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{checkPhoneNumber(user.phone)}}</td>
+    <td>{{user.address.city}}</td>
+    <td>{{user.address.address_line1}}</td>
+    <td>{{user.address.address_line2}}</td>
+    <td>{{user.address.postal_code}}</td>
+
+  </tr>
+</table>
