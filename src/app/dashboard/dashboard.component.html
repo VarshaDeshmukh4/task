@@ -1,3 +1,4 @@
+<input type="text" [(ngModel)]="name" placeholder="Serach any fields"/>
 <br> <br>
 <table id="users">
   <tr>
@@ -11,7 +12,7 @@
     <th>Address2</th>
     <th>Postal Code</th>
   </tr>
-  <tr *ngFor="let user of users">
+  <tr *ngFor="let user of users | customerEmailFilter:name;let i = index">
     <td>{{user.id}}</td>
     <td>{{user.name}}</td>
     <td>{{checkPhoneNumber(user.phone)}}</td>
