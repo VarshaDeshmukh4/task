@@ -1,25 +1,30 @@
-<input type="text" [(ngModel)]="name" placeholder="Serach any fields"/>
-<br> <br>
-<table id="users">
-  <tr>
-    <th>
-      Id
-    </th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>City</th>
-    <th>Address1</th>
-    <th>Address2</th>
-    <th>Postal Code</th>
-  </tr>
-  <tr *ngFor="let user of users | customerEmailFilter:name;let i = index">
-    <td>{{user.id}}</td>
-    <td>{{user.name}}</td>
-    <td>{{checkPhoneNumber(user.phone)}}</td>
-    <td>{{user.address.city}}</td>
-    <td>{{user.address.address_line1}}</td>
-    <td>{{user.address.address_line2}}</td>
-    <td>{{user.address.postal_code}}</td>
-
-  </tr>
-</table>
+<!-- <input type="text" [(ngModel)]="name" placeholder="Serach any fields" /><br> <br> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <button class="btn" (click)="redirectToAddData()">ADD NEW</button>
+      <br> <br>
+      <table id="users">
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>Address1</th>
+          <th>Address2</th>
+          <th>Postal Code</th>
+          <th>Edit</th>
+        </tr>
+        <tr *ngFor="let user of dashboradarray.data ; let i= index">
+          <td>{{i+1}}</td>
+          <td>{{user.name}}</td>
+          <td>{{checkPhoneNumber(user.phone)}}</td>
+          <td *ngFor="let x of user.address | keyvalue">{{x.value}}</td>
+          <td (click)="editData(user,user.address)"><span class="edit">Edit</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

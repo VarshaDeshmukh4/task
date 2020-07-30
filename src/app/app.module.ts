@@ -8,11 +8,13 @@ import { ReactiveFormsModule,FormsModule} from '@angular/forms';
 import {DashboardComponent} from '../app/dashboard/dashboard.component';
 import { AppService } from './app.service';
 import {FilterPipe} from './filter.pipe';
+import { AddDataComponent } from './add-data/add-data.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    FilterPipe
+    FilterPipe,
+    AddDataComponent
   ],
   imports: [
     BrowserModule,
